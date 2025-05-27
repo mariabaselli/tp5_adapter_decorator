@@ -13,7 +13,7 @@ class Texto implements Figura {
     }
 
     @Override
-    public void dibujar(PanelAdapter g2d) {
+    public void dibujar(Panel g2d) {
         g2d.drawString(texto, coordenada.x(), coordenada.y());
     }
 }

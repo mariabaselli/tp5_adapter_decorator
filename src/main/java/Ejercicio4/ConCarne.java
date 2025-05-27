@@ -2,7 +2,7 @@ package Ejercicio4;
 
 public class ConCarne extends ExtraDecorador {
 
-    private static final int PRECIO = 140;
+    private static final double PRECIO = 140;
     private static final String CON_CARNE = "con carne";
 
     private String descripcion;
@@ -15,12 +15,13 @@ public class ConCarne extends ExtraDecorador {
     }
 
     @Override
-    protected double informarPrecio() {
-        return this.precio;
+    public String descripcion() {
+        return CON_CARNE;
     }
 
     @Override
-    protected String informarDescripcion() {
-       return this.descripcion;
+    public double precio() {
+        return PRECIO;
     }
+
 }

@@ -1,8 +1,5 @@
 package Ejercicio4;
 
-import static java.lang.System.lineSeparator;
-import static java.lang.System.out;
-
 public abstract class ExtraDecorador implements Combo {
     private Combo combo;
 
@@ -11,13 +8,16 @@ public abstract class ExtraDecorador implements Combo {
     }
 
     @Override
-    public final void informarPedido() {
-        this.combo.informarPedido();
-        out.print("[ " + informarDescripcion() + " " + informarPrecio() + " ]" + lineSeparator());;
-
+    public String descripcion() {
+        return combo.descripcion();
     }
 
-    protected abstract double informarPrecio() ;
 
-    protected abstract String informarDescripcion();
+
+    @Override
+    public double precio() {
+        return combo.precio();
+    }
+
+
 }

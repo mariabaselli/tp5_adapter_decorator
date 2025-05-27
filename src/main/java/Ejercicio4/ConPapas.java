@@ -1,8 +1,9 @@
 package Ejercicio4;
 
 public class ConPapas extends ExtraDecorador{
-    static final int PRECIO = 120;
-    static final String CON_PAPAS = "con papas";
+    static final double PRECIO = 120;
+    static final String CON_PAPAS = " con papas ";
+
     private String descripcion;
     private double precio;
 
@@ -13,13 +14,13 @@ public class ConPapas extends ExtraDecorador{
     }
 
     @Override
-    protected double informarPrecio() {
-        return this.precio;
+    public String descripcion() {
+        return super.descripcion() + descripcion ;
     }
 
     @Override
-    protected String informarDescripcion() {
-        return this.descripcion;
+    public double precio() {
+        return precio + super.precio();
     }
 
 }
