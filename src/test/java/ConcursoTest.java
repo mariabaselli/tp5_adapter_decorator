@@ -1,8 +1,6 @@
-import Ejercicio5.Model.Concurso;
 import Ejercicio5.Model.ConcursoDefault;
 import Ejercicio5.Model.ConcursoEnvio;
 import Ejercicio5.Model.Participante;
-import Ejercicio5.persistencia.ArchivoDeInscriptos;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ConcursoTest {
 
     private Participante jose;
-    private Concurso unConcurso;
     private LocalDate fechaInscripcionParticipante;
     private LocalDate fechaInicioConcurso;
     private LocalDate fechaFinConcurso;
@@ -32,10 +29,6 @@ public class ConcursoTest {
         this.fechaInscripcionParticipante = LocalDate.now().plusDays(5);
         this.fakeCorreoElectronico = new FakeCorreoElectronico();
         this.fakeRegistroInscriptos = new FakeRegistroInscriptos();
-
-
-        //this.unConcurso = Concurso.nuevoConcurso("01a", "Un Concurso", fechaInicioConcurso, fechaFinConcurso, fakeRegistroInscriptos);
-
         this.destinatario = "destinatarioprueba@prueba.com";
         this.asunto = "Confirmación inscripción";
         this.mensaje = "Hola, te has inscripto al concurso";

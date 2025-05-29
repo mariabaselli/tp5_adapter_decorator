@@ -12,24 +12,20 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-
-        // ArchivoDeInscriptos registro = new ConcursoDAOJDBC();
-        //ArchivoDeInscriptos archivo = new ArchivoDeInscriptos("C:\\Users\\Maria\\Documents\\universidad\\2025\\Objetos 2\\Tp's\\Tp2 registroInscriptos.txt");
-        //NotificarRegistro servicio = new CorreoElectronico("prueba@prueba.com");
-        //Concurso unConcurso = Concurso.nuevoConcurso("01a", "Un Concurso",
-        //        LocalDate.now(), LocalDate.now().plusDays(60),
-        ////        archivo);
-        //Participante jose = Participante.nuevoParticipante("joseperez01", "Jose Perez");
-        //unConcurso.inscribirAConFecha(jose, LocalDate.now().plusDays(5), "prueba@prueba.com",
-        //        "Inscripción Concurso", "Hola, te has inscripto al concurso");
+        Participante jose = Participante.nuevoParticipante("joseperez01", "Jose Perez");
 
         ArchivoDeInscriptos archivo = new ArchivoDeInscriptos("C:\\Users\\Maria\\Documents\\universidad\\2025\\Objetos 2\\Tp's\\Tp2 registroInscriptos.txt");
+        var concursoSinEnvio = new ConcursoDefault("01a", "Un Concurso",
+                LocalDate.now(), LocalDate.now().plusDays(60), archivo);
+        concursoSinEnvio.inscribirAConFecha(jose,LocalDate.now().plusDays(5), "prueba@prueba.com",
+                "Inscripción Concurso", "Hola, te has inscripto al concurso");
+
+
         var v = new ConcursoEnvio(new ConcursoDefault("01a", "Un Concurso",
                 LocalDate.now(), LocalDate.now().plusDays(60),
                 archivo), new CorreoElectronico("prueba@gmail.com"){
         });
 
-        Participante jose = Participante.nuevoParticipante("joseperez01", "Jose Perez");
         v.inscribirAConFecha(jose,LocalDate.now().plusDays(5), "prueba@prueba.com",
                 "Inscripción Concurso", "Hola, te has inscripto al concurso");
 
